@@ -30,3 +30,15 @@ function editTask(button) {
 function deleteTask(button) {
   button.parentElement.remove();
 }
+
+
+
+document.addEventListener("DOMContentLoaded", loadTasks);
+
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach((taskText) => addTask(taskText));
+}
+
+const createdDate = new Date();
+const formattedDate = `${createdDate.toLocaleDateString()} ${createdDate.toLocaleTimeString()}`;
