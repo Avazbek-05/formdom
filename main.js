@@ -1,5 +1,8 @@
 const taskInput = document.getElementById("Input");
 const taskList = document.getElementById("taskList");
+const hour = document.getElementById("hour");
+const minute = document.getElementById("minute");
+const createdDate = new Date();
 
 document.getElementById("addTaskBtn").onclick = () => {
   if (Input.value.trim()) {
@@ -15,9 +18,13 @@ function addTask(taskText) {
   taskDiv.className = "task";
   taskDiv.innerHTML = `
     <span>${taskText}</span>
+    <div class="absalute bottom-0 right-0"><span class="hour">${createdDate.getHours()}</span>
+      <span class="">:</span>
+      <span class="minute ">${createdDate.getMinutes()}</span></div>
     <button onclick="editTask(this)">Edit</button>
     <button onclick="deleteTask(this)">Delete</button>
   `;
+
   taskList.appendChild(taskDiv);
 }
 
@@ -31,14 +38,9 @@ function deleteTask(button) {
   button.parentElement.remove();
 }
 
-
-
 document.addEventListener("DOMContentLoaded", loadTasks);
 
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.forEach((taskText) => addTask(taskText));
 }
-
-const createdDate = new Date();
-const formattedDate = `${createdDate.toLocaleDateString()} ${createdDate.toLocaleTimeString()}`;
