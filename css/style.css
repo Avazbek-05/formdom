@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
- body {
+body {
   background-color: #2d2d2d;
   color: #fff;
   text-align: center;
@@ -13,21 +11,18 @@
 .task {
   display: flex;
   width: 80%;
-  margin-top: 30px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   background-color: #1e1e1e;
   padding: 10px;
- 
   border-radius: 5px;
+  
 }
 .task span {
   flex: 1;
   text-align: left;
-  
 }
 .task button {
   margin-left: 5px;
 }
-

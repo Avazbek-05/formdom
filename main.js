@@ -16,7 +16,7 @@ function addTask(taskText) {
   taskDiv.innerHTML = `
     <span>${taskText}</span>
     <button onclick="editTask(this)">Edit</button>
-    <button  class="text-[red] text-[18px] gap-[10px] onclick="deleteTask(this)">Delete</button>
+    <button onclick="deleteTask(this)">Delete</button>
   `;
   taskList.appendChild(taskDiv);
 }
